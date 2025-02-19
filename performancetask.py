@@ -2,14 +2,13 @@
 import random
 
 
-possibleChoices = ["rock", "paper", "scissor"]
+possibleChoices = ["rock", "paper", "scissor"]    
 
 
 def rps(answer):
 
     userScore = 0
     dealerScore = 0 
-    dealerChoice = random.choice(possibleChoices)
     
 
     rounds  = input("how much rounds do you want to play? (At most 10 rounds): ")
@@ -18,6 +17,7 @@ def rps(answer):
         return rps(answer)
            
     for x in range(int(rounds) + 1):
+        dealerChoice = random.choice(possibleChoices)
 
         userChoice = input(f"You want {possibleChoices}?: ")
                 
@@ -38,15 +38,15 @@ def rps(answer):
         print("you won")
         print(f'DEALER SCORE:{dealerScore}') 
         print(f'USER SCORE:{userScore}')
-    if userScore <= dealerScore:
+    elif userScore <= dealerScore:
         print("I WON")
         print(f'DEALER SCORE:{dealerScore}') 
         print(f'USER SCORE:{userScore}')
-    if userScore == dealerScore:
+    elif userScore == dealerScore:
         print("tie")
         print(f'DEALER SCORE:{dealerScore}') 
         print(f'USER SCORE:{userScore}')
-
+    else:
         
         pass
 
